@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "faiss-node": "^0.5.1",
+    "langchain": "^0.0.211",
+    "twilio": "^4.20.0"
+  },
+  "devDependencies": {
+    "openai": "^4.24.1"
+  }
+}

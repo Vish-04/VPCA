@@ -1,0 +1,89 @@
+MENU:
+Appetizers:
+Samosa Chaat - Crispy pastry filled with spiced potatoes, topped with yogurt, chutneys, and crispy sev. $7.99
+Paneer Tikka - Tandoor-grilled cottage cheese marinated in aromatic spices. $8.49
+Vegetable Pakoras - Assorted vegetables dipped in chickpea flour batter and fried to perfection. $6.99
+Chicken 65 - Spicy fried chicken seasoned with curry leaves and red chilies. $9.99
+Main Course:
+Butter Chicken - Tandoori chicken simmered in a rich tomato and butter gravy. $14.99
+Palak Paneer - Creamy spinach curry with cubes of paneer. $12.99
+Rogan Josh - Tender lamb cooked in aromatic spices and tomato-based gravy. $15.99
+Vegetable Biryani - Fragrant basmati rice cooked with mixed vegetables and spices. $13.99
+Breads:
+Garlic Naan - Oven-baked bread topped with garlic and butter. $3.99
+Plain Paratha - Flaky whole wheat bread cooked on a griddle. $2.99
+Drinks:
+Mango Lassi - Refreshing yogurt-based drink blended with ripe mangoes. $4.49
+Masala Chai - Traditional Indian spiced tea. $2.99
+Rose Falooda - Rose-flavored milkshake with vermicelli and basil seeds. $5.99
+Desserts:
+Gulab Jamun - Deep-fried milk balls soaked in sugar syrup. $4.99
+Rasmalai - Cottage cheese dumplings soaked in sweetened, thickened milk. $6.49
+Kulfi - Creamy Indian ice cream flavored with cardamom and nuts. $5.99
+Chef's Special:
+Tandoori Mixed Grill - Assorted tandoor-cooked delicacies including chicken, lamb, and paneer. $18.99
+Extras:
+Raita - Cool yogurt with cucumbers and spices. $3.49
+Papadum - Crispy lentil wafers served with chutney. $2.99
+Mixed Pickle - Assorted spicy and tangy pickles. $2.49
+
+FAQ:
+What type of cuisine do you serve?
+We specialize in authentic North Indian cuisine.
+
+Are reservations required?
+Reservations are recommended, especially during peak hours, to ensure prompt seating.
+
+Do you offer vegan/vegetarian options?
+Yes, we have a wide selection of both vegan and vegetarian dishes available.
+
+Is your food spicy?
+Our menu caters to various spice preferences. Dishes can be adjusted to your spice level preference.
+
+Do you offer gluten-free options?
+Yes, we have several gluten-free dishes available. Please ask our staff for recommendations.
+
+What are the restaurant's opening hours?
+We are open from 11:00 AM to 10:00 PM every day of the week.
+
+Can I order takeout or delivery?
+Absolutely! We offer both takeout and delivery services for your convenience.
+
+Are kids' menus available?
+Yes, we have a kids' menu with a selection of dishes suitable for younger diners.
+
+Do you cater to large groups or events?
+Yes, we offer catering services for events of various sizes. Please contact us in advance for arrangements.
+
+Are your ingredients locally sourced?
+We strive to source our ingredients locally whenever possible to ensure freshness and quality.
+
+Do you serve alcoholic beverages?
+We offer a selection of beer and wine to complement your meal.
+
+Is the restaurant wheelchair accessible?
+Yes, our restaurant is wheelchair accessible, and we have facilities to accommodate all guests.
+
+Do you accept credit cards?
+Yes, we accept major credit cards for payment.
+
+Can I make special requests for dishes not on the menu?
+Our chefs are happy to accommodate special requests whenever possible. Please inform us in advance.
+
+Are there any lunch specials or deals available?
+Yes, we have lunch specials available during weekdays. Check our menu for details.
+
+Do you have outdoor seating?
+Yes, we have an outdoor seating area for guests to enjoy their meal in good weather.
+
+Are your meals halal?
+Yes, all meat served at our restaurant is halal.
+
+Is there parking available nearby?
+Yes, we have parking facilities available for our customers.
+
+Do you have a loyalty program or rewards for frequent diners?
+Yes, we offer a loyalty program where frequent diners can earn rewards and discounts.
+
+Can I book the restaurant for a private event?
+Absolutely! We offer private event bookings for special occasions. Contact us for more information and reservations.

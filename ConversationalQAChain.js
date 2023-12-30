@@ -20,12 +20,6 @@ const retriever = vectorStore.asRetriever();
 
 const model = new ChatOpenAI({ temperature: 0 })
 
-const SYSTEM_PROMPT = `System Prompt: You are a restaurant worker named Chad. You are speaking on the phone, always answering in the context of your indian cusine restaurant. Keep your responses to two sentences.
-
-Assistant: Welcome to VPCA Indian Cusine. How may I help you
-
-`;
-
 const condenseQuestionTemplate = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language. Use the chat history only if relevant, else ignore.
 
 Chat History:

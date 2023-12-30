@@ -11,12 +11,11 @@ config();
 
 import { BufferMemory } from "langchain/memory"
 import {conversationalRetrievalQAChain} from "./ConversationalQAChain.js"
-import { orderHandleFunctionCall } from "./OrderFunctionCall.js";
 
 const model = new ChatOpenAI({ temperature: 0, maxTokens: 4 })
 const chatPrompt = ChatPromptTemplate.fromPromptMessages([
     SystemMessagePromptTemplate.fromTemplate(
-        "Your purpose is to determine which of the functions to use between the function queryRestaurant and handleOrder when given the customers query. Use queryRestaurant to address any questions and inquiries about the restaurant and the menu but not for anything related to ordering food. Use handleOrder to handles any ordering action, including adding an item to the the order, removing an item, and modifying an item. Your only response should be the function name or names seperated by spaces and nothing else"
+        "Your purpose is to determine which of the functions to use between the functions 'queryRestaurant' and 'redirect' when given the customers query. Use queryRestaurant to address any questions and inquiries about the restaurant and the menu but not for anything related to ordering food. Use redirect to handle any ordering action, including adding an item to the the order, removing an item, and modifying an item or for any personal request to speak to staff of the restaurant. Your only response should be the function name or names seperated by spaces and nothing else"
     ),
     new MessagesPlaceholder("chat_history"),
     HumanMessagePromptTemplate.fromTemplate("{query}")
@@ -49,7 +48,7 @@ export const handleFunctionCall = async (userMessage, chatHistory, order) => {
                 response: lCResponse.content
             })
         }
-        if(functionCall === "handleOrder"){
+        if(functionCall === "redirect"){
             const orderHandleResponse = await orderHandleFunctionCall(userMessage, chatHistory, order)
             orderHandleResponse.map((functionResponse) =>{
                 response.push(

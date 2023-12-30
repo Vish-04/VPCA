@@ -5,7 +5,6 @@ import { config } from "dotenv";
 config();
 import OpenAI from 'openai';
 import { handleFunctionCall } from './FunctionCall.js';
-import { combineFunctionCallConversationalRetrievalQAChain } from "./OrderCQAChain.js";
 import { conversationalRetrievalQAChain } from './ConversationalQAChain.js';
 
 const app = express();

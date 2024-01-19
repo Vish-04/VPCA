@@ -3,27 +3,41 @@ import twilio from 'twilio';
 import bodyParser from 'body-parser';
 import { config } from "dotenv";
 config();
-import OpenAI from 'openai';
 import { handleFunctionCall } from './FunctionCall.js';
 import { conversationalRetrievalQAChain } from './ConversationalQAChain.js';
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// const openai = new OpenAI({});
+// Configure session middleware
+import session from 'express-session';
+import { v4 as uuidv4 } from 'uuid';
 
-const chatHistory = [
-    {'role':'system', 'content':'You are a restaurant worker named Chad. You are speaking on the phone, always answering in the context of your indian cusine restaurant. Keep your responses to 2-3 sentences or less.'}, 
-    {'role':'assistant', 'content': 'Welcome to VPCA Indian Cusine. How may I help you?'},
-]
-
-let order = ""
+app.use(
+  session({
+    genid: (req) => {
+      return uuidv4(); // Generate unique session IDs
+    },
+    secret: 'gD1h4zheqfOtcMWqI9e8jEcWhiCLLzLD', // Replace with your secret key
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 // Handle incoming calls from Twilio
 app.post('/call', twilio.webhook({ validate: false }), async (req, res) => {
 
-  chatHistory.splice(0, chatHistory.length)
-  order = ""
+    req.session.chatHistory = [
+        {
+          role: 'system',
+          content:
+            'You are a restaurant worker named Chad. You are speaking on the phone, always answering in the context of your Indian cuisine restaurant. Keep your responses to 2-3 sentences or less.',
+        },
+        {
+          role: 'assistant',
+          content: 'Welcome to VPCA Indian Cuisine. How may I help you?',
+        },
+      ];
   
   const response = new twilio.twiml.VoiceResponse();
 
@@ -32,8 +46,13 @@ app.post('/call', twilio.webhook({ validate: false }), async (req, res) => {
         action: '/process_input', 
         input: "speech", 
         speechTimeout: 1,
-        timeout: 5,
-        method: 'POST'
+        language: 'en-IN',
+        profanityFilter: true,
+        speechModel: 'phone_call',
+        enhanced: true,
+        timeout:5,
+        method: 'POST',
+        hints: "Samosa Chaat, Paneer Tikka, Vegetable Pakoras, Chicken 65, Butter Chicken, Palak Paneer, Rogan Josh, Vegetable Biryani, Garlic Naan, Plain Paratha, Mango Lassi, Masala Chai, Rose Falooda, Gulab Jamun, Rasmalai, Kulfi, Mixed Grill, Raita, Papadum, Mixed Pickle"
     }
   );
   gather.say("Welcome to VPCA Indian Cusine. How may I help you?")
@@ -54,47 +73,36 @@ app.post('/process_input', twilio.webhook({ validate: false }), async (req, res)
   } else {
       
       try {
-
-        const botResponses = await handleFunctionCall(userMessage, chatHistory, order)
-
-        // const lc_response = await conversationalRetrievalQAChain.invoke({
-        //     question: userMessage,
-        //     chat_history: chatHistory
-        // })
-
+        const chatHistory = req.session.chatHistory || [];
+        const lc_response = await conversationalRetrievalQAChain.invoke({
+            question: userMessage,
+            chat_history: chatHistory
+        })
+        console.log(lc_response)
         // change to .response if RAG not in use else.text and .content 
-        // const botResponse = lc_response.content
+        const botResponse = lc_response.content
 
-        if(botResponses.length == 1 && botResponses[0].function === 'queryRestaurant'){
-            // Create a TwiML response to speak the bot's response
-            response.say(botResponses[0].response);
-            console.log("Response", botResponses[0].response)
+        response.say(botResponse);
+        console.log("Response", botResponse)
 
-            chatHistory.push({'role':'user', 'content': userMessage}, {'role':'assistant', 'content': botResponses[0].response})
-        } else{
-            
-            const combinedFunctions = botResponses.map((botResponse)=>{
-                (botResponse.function === ' updateOrder' ? order = botResponse.response : null)
-                return `${botResponse.function}: ${botResponse.response}`
-            }).join('\n')
-            console.log("ORDER", order)
-            const cFCResponse = await combineFunctionCallConversationalRetrievalQAChain.invoke({
-                question: `userMessage: ${userMessage}\n` + combinedFunctions,
-                chat_history: chatHistory,
-            })
-            response.say(cFCResponse);
-            console.log("Response", cFCResponse)
-
-            chatHistory.push({'role':'user', 'content': userMessage}, {'role':'assistant', 'content': cFCResponse})
-        }
-                
+        req.session.chatHistory = [
+            ...chatHistory,
+            { role: 'user', content: userMessage },
+            { role: 'assistant', content: botResponse },
+          ];    
+                    
         const gather = response.gather(
             {
                 action: '/process_input', 
                 input: "speech", 
                 speechTimeout: 1,
+                language: 'en-IN',
+                profanityFilter: true,
+                speechModel: 'phone_call',
+                enhanced: true,
                 timeout:5,
-                method: 'POST'
+                method: 'POST',
+                hints: "Samosa Chaat, Paneer Tikka, Vegetable Pakoras, Chicken 65, Butter Chicken, Palak Paneer, Rogan Josh, Vegetable Biryani, Garlic Naan, Plain Paratha, Mango Lassi, Masala Chai, Rose Falooda, Gulab Jamun, Rasmalai, Kulfi, Mixed Grill, Raita, Papadum, Mixed Pickle"
             }
           );
       } catch (err) {

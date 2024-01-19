@@ -1,13 +1,23 @@
 {
   "type": "module",
   "dependencies": {
+    "@deepgram/sdk": "^3.0.1",
+    "alawmulaw": "^2.0.4",
     "axios": "^1.6.2",
+    "base-64": "^1.0.0",
     "body-parser": "^1.20.2",
+    "cross-fetch": "^4.0.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "faiss-node": "^0.5.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "lamejs": "^1.2.1",
     "langchain": "^0.0.211",
-    "twilio": "^4.20.0"
+    "temp": "^0.9.4",
+    "twilio": "^4.20.0",
+    "wavefile": "^11.0.0"
   },
   "devDependencies": {
     "openai": "^4.24.1"

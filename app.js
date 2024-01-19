@@ -5,6 +5,7 @@ import { config } from "dotenv";
 config();
 import { handleFunctionCall } from './FunctionCall.js';
 import { conversationalRetrievalQAChain } from './ConversationalQAChain.js';
+import { combineFunctionCallConversationalRetrievalQAChain } from './OrderCQAChain.js';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -79,18 +80,30 @@ app.post('/process_input', twilio.webhook({ validate: false }), async (req, res)
             chat_history: chatHistory
         })
         console.log(lc_response)
-        // change to .response if RAG not in use else.text and .content 
-        const botResponse = lc_response.content
 
-        response.say(botResponse);
-        console.log("Response", botResponse)
+        const botResponses = await handleFunctionCall( userMessage, chatHistory)
+        console.log("BOT RESPONSES", botResponses)
+          
+        if(botResponses.length == 1 && botResponses[0].function === 'queryRestaurant'){
+          response.say(botResponses[0].response);
+          console.log("Response", botResponses[0].response)
 
-        req.session.chatHistory = [
-            ...chatHistory,
-            { role: 'user', content: userMessage },
-            { role: 'assistant', content: botResponse },
-          ];    
-                    
+          chatHistory.push({'role':'user', 'content': userMessage}, {'role':'assistant', 'content': botResponses[0].response})
+        } else{        
+        
+          const combinedFunctions = botResponses.map((botResponse)=>{
+              return `${botResponse.function}: ${botResponse.response}`
+          }).join('\n')
+          const cFCResponse = await combineFunctionCallConversationalRetrievalQAChain.invoke({
+              question: `userMessage: ${userMessage}\n` + combinedFunctions,
+              chat_history: chatHistory,
+          })
+          response.say(cFCResponse);
+          console.log("Response", cFCResponse)
+
+          chatHistory.push({'role':'user', 'content': userMessage}, {'role':'assistant', 'content': cFCResponse})
+        }
+     
         const gather = response.gather(
             {
                 action: '/process_input', 

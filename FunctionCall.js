@@ -49,12 +49,10 @@ export const handleFunctionCall = async (userMessage, chatHistory, order) => {
             })
         }
         if(functionCall === "redirect"){
-            const orderHandleResponse = await orderHandleFunctionCall(userMessage, chatHistory, order)
-            orderHandleResponse.map((functionResponse) =>{
-                response.push(
-                    functionResponse
-                )
-            })
+                response.push({
+                    function: 'redirect',
+                    response: 'Our live staff are better suited for this operation, redirecting your call.'
+                })
         }
     }
     console.log("RESPONSE", response)

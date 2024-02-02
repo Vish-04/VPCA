@@ -1,0 +1,141 @@
+FAQ:
+
+What times are you open ?
+We are open from 8:00 am to 10:00 pm, Wednesday through Monday. We are closed on Tuesdays.
+
+Are you open on holidays?
+Yes we are open on all long weekends and through all the holidays
+
+Do you serve halal meat?
+Yes we serve halal meat
+
+Do you have vegan options? (any options that have particular reference?)
+Yes there are vegan options
+
+Do you have allergens in your food?
+Yes we do few items have allergens
+
+When does the kitchen close?
+9:45 pm
+
+What are the most popular items on your menu?
+Cheese Pizza.
+Veggie Pizza.
+Pepperoni Pizza.
+Meat Pizza.
+Margherita Pizza.
+BBQ Chicken Pizza.
+Hawaiian Pizza.
+
+
+How many tables do you have at your restaurant ?
+8 tables
+
+At what times is the restaurant most busy ?
+The restaurant experiences high traffic during lunchtime from 12:00 pm to 3:00 pm and during dinner time from 8:00 pm to 10:00 pm.
+Weekends saturday and sunday it is super busy.
+
+
+What is the address of your restaurant ?
+880 alvardo circle right next to safeway.
+
+What are some frequently asked question that are not part of the rest of the form ?
+What toppings do you serve ? 
+Pepperoni.
+Mushrooms.
+Onions.
+Sausage.
+Bacon.
+Extra cheese.
+Black olives.
+Green peppers.
+
+What ingredients are used in NV Pizza and what are their nutritional values?
+
+We use only genuine and high quality ingredients.
+Concerning yeast, classic pizzas use starter yeast while brewer’s yeast is used for gluten free pizzas.
+The product cards found on our web site contain tabs listing the nutritional values.
+
+
+Anything else you would like to add about your restaurant?
+
+MENU:
+1. Classic Margherita Pizza
+Description: Our signature pizza featuring a perfect blend of fresh tomato sauce, mozzarella cheese, basil, and a drizzle of olive oil.
+Vegetarian: Yes
+Vegan: No
+Kosher: No
+Allergens: Dairy
+Price: $12.99
+
+2. Ultimate Veggie Delight
+Description: A garden-fresh medley of bell peppers, red onions, mushrooms, black olives, and tomatoes atop a bed of savory tomato sauce and mozzarella cheese.
+Vegetarian: Yes
+Vegan: Yes
+Kosher: No
+Allergens: Dairy
+Price: $14.99
+
+3. Spicy BBQ Chicken Supreme
+Description: Succulent BBQ chicken, red onions, and jalapeños with a swirl of zesty BBQ sauce, all generously topped with mozzarella cheese.
+Vegetarian: No
+Vegan: No
+Kosher: No
+Allergens: Dairy, Poultry
+Price: $15.99
+
+4. Mediterranean Feast Pizza
+Description: A taste of the Mediterranean with feta cheese, Kalamata olives, artichoke hearts, cherry tomatoes, and a sprinkle of oregano.
+Vegetarian: Yes
+Vegan: No
+Kosher: No
+Allergens: Dairy
+Price: $16.99
+
+5. Vegan Harvest Supreme
+Description: A plant-based delight featuring vegan cheese, spinach, cherry tomatoes, red onions, and roasted garlic on a vegan-friendly crust.
+Vegetarian: No
+Vegan: Yes
+Kosher: No
+Allergens: None
+Price: $17.99
+
+6. Classic Pepperoni Heaven
+Description: The timeless favorite with generous pepperoni slices, tomato sauce, and mozzarella cheese.
+Vegetarian: No
+Vegan: No
+Kosher: No
+Allergens: Dairy, Pork
+Price: $13.99
+
+7. Gluten-Free Margherita
+Description: Our classic Margherita pizza with a gluten-free crust, ensuring everyone can enjoy this flavorful option.
+Vegetarian: Yes
+Vegan: No
+Kosher: No
+Allergens: Dairy
+Price: $14.99
+
+8. Hawaiian Luau Pizza
+Description: A tropical twist with ham, pineapple, and red onions, creating a sweet and savory combination on a bed of mozzarella cheese.
+Vegetarian: No
+Vegan: No
+Kosher: No
+Allergens: Dairy, Pork
+Price: $16.99
+
+9. Vegan Pesto Delight
+Description: A burst of flavors with vegan pesto sauce, cherry tomatoes, arugula, and vegan cheese on our vegan-friendly crust.
+Vegetarian: No
+Vegan: Yes
+Kosher: No
+Allergens: None
+Price: $17.99
+
+10. Supreme Meat Lover's
+Description: For meat enthusiasts, this pizza boasts a hearty combination of pepperoni, sausage, bacon, and ground beef with mozzarella cheese.
+Vegetarian: No
+Vegan: No
+Kosher: No
+Allergens: Dairy, Pork, Beef
+Price: $18.99

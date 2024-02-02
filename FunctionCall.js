@@ -28,7 +28,7 @@ const chain = new ConversationChain({
 })
 
 
-export const handleFunctionCall = async (userMessage, chatHistory, order) => {
+export const handleFunctionCall = async (userMessage, chatHistory) => {
     const response = []
     const fCResponse = await chain.call({
         query: userMessage,

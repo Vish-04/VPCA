@@ -10,7 +10,6 @@ import {
   RunnablePassthrough,
 } from "langchain/schema/runnable";
 import { StringOutputParser } from "langchain/schema/output_parser";
-import { formatDocumentsAsString } from "langchain/util/document";
 
 const embeddings = new OpenAIEmbeddings();
 
@@ -28,7 +27,7 @@ const formatChatHistory = (chatHistory) => {
 };
 
 //combine Order Chain
-const combineFunctionCallQuestionTemplate = `You are a restaurant worker named Chad working at VPCA Indian Cusine and you are given the following conversation and an input. The input consists of upto four things, including userMessage, which is the request of the user, updateOrder, which is the updated and changed version of the order, getOrder, which contains a response detailing the contents of the order, and queryRestaurant, which provides an answer to any inquiry regarding the restaurant or menu. Your job is to account for all the inputs using the Chat History as well if necessary, to come up with an appropriate response to the userMessage. Remove fluff and keep your answer short, but dont leave out any modifications or quantity if relevant.
+const combineFunctionCallQuestionTemplate = `You are a restaurant worker named Chad working at NV Pizzeria and you are given the following conversation and an input. The input consists of upto four things, including userMessage, which is the request of the user, queryRestaurant, which provides an answer to any inquiry regarding the restaurant or menu, and redirect, which provides a statements saying the call is to be redirected to live staff. Your job is to account for all the inputs using the Chat History as well if necessary, to come up with an appropriate response to the userMessage. If redirect input is recieved, do not apologize, and tell the customer you are redirecting your call to a live worker who can better handle the request. Remove fluff and keep your answer short.
 
 Chat History:
 {chat_history}

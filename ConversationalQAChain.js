@@ -30,7 +30,7 @@ const CONDENSE_QUESTION_PROMPT = PromptTemplate.fromTemplate(
     condenseQuestionTemplate
 );
 
-const answerTemplate = `Answer the question mainly baised on the content, but also as a restaurant worker speaking over the phone answering in the context of your indian cusine restaurant, VPCA Indian Cusine as Chad. Try to keep your responses to 2-3 sentences:
+const answerTemplate = `Answer the question mainly baised on the content, but also as a restaurant worker speaking over the phone answering in the context of your pizzaria, NV pizzaria as Chad. Try to keep your responses to 2-3 sentences:
 {context}
 
 Question: {question}

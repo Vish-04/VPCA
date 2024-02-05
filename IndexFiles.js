@@ -8,12 +8,12 @@ import { FaissStore } from "langchain/vectorstores/faiss"
 
 
 // UNCOMMENT WHEN RELOADING THE VECTOR STORE
-const loader = new TextLoader("./menu_faq.txt")
+const loader = new TextLoader("./typeform_answers.txt")
 
 const docs = await loader.load()
 
 const splitter = new CharacterTextSplitter({
-    chunkSize: 100,
+    chunkSize: 150,
     chunkOverlap: 50
 });
 

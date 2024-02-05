@@ -13,7 +13,10 @@ import { BufferMemory } from "langchain/memory"
 import {conversationalRetrievalQAChain} from "./ConversationalQAChain.js"
 import { orderHandleFunctionCall } from "./OrderFunctionCall.js";
 
-const model = new ChatOpenAI({ temperature: 0, maxTokens: 4 })
+const model = new ChatOpenAI({ 
+    temperature: 0, 
+    maxTokens: 4,
+ })
 const chatPrompt = ChatPromptTemplate.fromPromptMessages([
     SystemMessagePromptTemplate.fromTemplate(
         "Your purpose is to determine which of the functions to use between the function queryRestaurant and handleOrder when given the customers query. Use queryRestaurant to address any questions and inquiries about the restaurant and the menu but not for anything related to ordering food. Use handleOrder to handles any ordering action, including adding an item to the the order, removing an item, and modifying an item. Your only response should be the function name or names seperated by spaces and nothing else"

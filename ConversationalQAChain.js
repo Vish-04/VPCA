@@ -20,9 +20,9 @@ const retriever = vectorStore.asRetriever();
 
 const model = new ChatOpenAI({ temperature: 0 })
 
-const SYSTEM_PROMPT = `System Prompt: You are a restaurant worker named Chad. You are speaking on the phone, always answering in the context of your indian cusine restaurant. Keep your responses to two sentences.
+const SYSTEM_PROMPT = `System Prompt: You are a restaurant worker named Chad. You are speaking on the phone, always answering in the context of your Pizzaria. Keep your responses to two sentences.
 
-Assistant: Welcome to VPCA Indian Cusine. How may I help you
+Assistant: Welcome to NV Pizzaria. How may I help you
 
 `;
 
@@ -36,7 +36,7 @@ const CONDENSE_QUESTION_PROMPT = PromptTemplate.fromTemplate(
     condenseQuestionTemplate
 );
 
-const answerTemplate = `Answer the question mainly baised on the content, but also as a restaurant worker speaking over the phone answering in the context of your indian cusine restaurant, VPCA Indian Cusine as Chad. Try to keep your responses to 2-3 sentences:
+const answerTemplate = `Answer the question baised on the content, and also as a restaurant worker speaking over the phone answering in the context of your pizzaria restaurant, NV Pizzaria as Chad. If the customer asks about an item not on the menu, politely inform them that the item is not available. If the context provided is irrelevant to the question and you do not know the answer state that you do not know. Keep your responses to 2-3 sentences:
 {context}
 
 Question: {question}
